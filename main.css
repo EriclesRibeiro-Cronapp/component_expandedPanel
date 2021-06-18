@@ -107,5 +107,6 @@ body {
     
 }
 .expanded__container.active .subtitle_item::before{
-    box-shadow: 0 0 5px 4px rgba(123, 187, 63, 0.6);;
+    box-shadow: 0 0 5px 4px rgba(123, 187, 63, 0.6);
+    transition: 0.9s;
 }
