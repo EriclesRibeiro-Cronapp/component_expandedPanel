@@ -1,0 +1,104 @@
+*,
+*::before,
+*::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    font-size: 10px;
+    box-sizing: border-box;
+    background-color: rgb(228, 228, 228);
+    color: rgb(228, 228, 228);
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.expandedPanel {
+    width: 40rem;
+    max-width: 40rem;
+    max-height: 100%;
+    margin: 0 auto;
+    padding: 0 1rem;
+    /* background-color: #283042; Plano de fundo do painel. Mesma cor */
+}
+.expanded__container {
+    width: 40rem;
+    background-color: #283042;
+    /*border-radius: .3rem;*/
+    padding: 0.8rem;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
+}
+.panel_link {
+    font-size: 1.2rem;
+    color: rgb(228, 228, 228);
+    text-decoration: none;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; 
+    padding: 0.9rem;
+}
+.panel_link .subtitle_item {
+    opacity: 0.2;
+    font-size: 1rem;
+}
+.panel_link .subtitle_item::before {
+    content: '';
+    background-color: rgb(123, 187, 63);
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    position: absolute;
+    left: 73%;
+    margin-top: 5px;
+}
+.panelContent {
+    max-height: 0;
+    overflow: hidden;
+    border-radius: 5px;
+    position: relative;
+    background-color: #1f2533;
+    transition: max-height 650ms;
+}
+.panelContent::before {
+    content: '';
+    position: absolute;
+    width: 5px;
+    height: 100%;
+    background-color: rgb(228, 228, 228);
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    border-radius: 5px 0 0 5px;
+    opacity: 0.3;
+}
+.panelContent::after {
+    content: '';
+    position: absolute;
+    width: 5px;
+    height: 100%;
+    background-color: rgb(228, 228, 228);
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    border-radius: 0 5px 5px 0;
+    opacity: 0.3;
+}
+.panelContent p {
+    font-size: 0.9rem;
+    padding: 1rem;
+}
+.expanded__container.active .panelContent {
+    max-height: 20rem;
+}
+
+.expanded__container.active .subtitle_item {
+    color: rgb(255, 255, 255);
+    opacity: 1;
+}
